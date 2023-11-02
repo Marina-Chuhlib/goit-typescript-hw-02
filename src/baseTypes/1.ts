@@ -12,9 +12,12 @@ let empty: null;
 empty = null;
 
 let notInitialize: any;
+notInitialize = "string";
+notInitialize = 2;
 
-let callback = (a:number) => {
+let callback = (a: number): number => {
   return 100 + a;
 };
+callback(50);
 
 export {};

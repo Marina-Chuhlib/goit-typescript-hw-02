@@ -6,14 +6,18 @@ interface IComponentProps {
   title: string;
 }
 
-class Component<T extends IComponentProps> {
+class Component<T> {
   constructor(public props: T) {}
 }
 
 class Page extends Component<IComponentProps> {
-  pageInfo() {
+  pageInfo():void  {
     console.log(this.props.title);
   }
 }
+
+const pageProps: IComponentProps = { title: "My Page" };
+const myPage = new Page(pageProps);
+myPage.pageInfo()
 
 export {};
